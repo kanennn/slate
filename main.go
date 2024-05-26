@@ -1,34 +1,38 @@
 package main
 
 import (
-	"bytes"
-	"io"
+	"fmt"
 	"os"
 
-	"github.com/go-rod/rod"
-	"github.com/go-rod/rod/lib/proto"
-	"github.com/yuin/goldmark"
+	"github.com/kanennn/slate/env"
+	"github.com/kanennn/slate/export"
+	"github.com/kanennn/slate/impa"
+	"github.com/kanennn/slate/markdown"
 )
 
+
 func main() {
-	source, err := io.ReadAll(os.Stdin)
-	if err != nil {
-		panic(err)
-	}
-		
-	var buf bytes.Buffer
-	if err := goldmark.Convert(source, &buf); err != nil {
- 		 panic(err)
-	}
-
-	width := 12
-	height := 12
-
-	target := proto.TargetCreateTarget{URL: "", Width: &width, Height: &height}
-	page, _ := rod.New().MustConnect().Page(target)
-	html := buf.String()
 	
-	page.SetDocumentContent(html)
-	page.AddStyleTag("", "h1 {color: blue; text-align: center;}")
-	page.MustPDF("about.pdf")
+	if len(os.Args) < 2 {
+		println("A subcommand is required") 
+	} else {
+		subcommand := os.Args[1]
+		switch subcommand {
+		case "init":
+			env.Init()
+		case "build":
+			build()
+		default:
+			fmt.Printf("%s: unknown command\n", subcommand)
+		}
+	}
+	
+}
+
+func build() {
+	
+	data := impa.Import()
+
+	html := markdown.Render(data.Markdown)
+	export.ExportPdf(html, data.Css)
 }
