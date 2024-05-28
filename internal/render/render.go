@@ -3,9 +3,8 @@ package markdown
 import (
 	"bytes"
 
-	"github.com/kanennn/slate/utils"
+	utils "github.com/kanennn/slate/util"
 	"github.com/yuin/goldmark"
-	
 )
 
 

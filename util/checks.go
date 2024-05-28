@@ -1,4 +1,4 @@
-package utils
+package util
 
 func Check(err error) int {
 	if err != nil {

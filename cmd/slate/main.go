@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kanennn/slate/env"
-	"github.com/kanennn/slate/export"
-	"github.com/kanennn/slate/impa"
-	"github.com/kanennn/slate/markdown"
+	"github.com/kanennn/slate/internal/env"
+	"github.com/kanennn/slate/internal/export"
+	"github.com/kanennn/slate/internal/impa"
+	markdown "github.com/kanennn/slate/internal/render"
 )
 
 

@@ -6,7 +6,7 @@ import (
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/proto"
 	"github.com/go-rod/rod/lib/utils"
-	slateutils "github.com/kanennn/slate/utils"
+	slateutils "github.com/kanennn/slate/util"
 )
 
 func ExportPdf(html bytes.Buffer, css[]byte) {

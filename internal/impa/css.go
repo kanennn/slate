@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kanennn/slate/utils"
+	utils "github.com/kanennn/slate/util"
 )
 
 func importCss() []byte {
