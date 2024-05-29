@@ -6,7 +6,8 @@ on:
             - main
         tags-ignore:
             - "*"
-
+permissions:
+  contents: write
 jobs:
     update-tag:
         runs-on: ubuntu-latest
