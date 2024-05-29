@@ -11,9 +11,6 @@ permissions:
     contents: write
 
 jobs:
-    tag:
-        runs-on: ubuntu-latest
-
     goreleaser:
         runs-on: ubuntu-latest
         steps:
