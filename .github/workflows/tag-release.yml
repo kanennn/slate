@@ -1,0 +1,20 @@
+name: Tag new release
+
+on:
+    push:
+        branches:
+            - main
+        tags-ignore:
+            - "*"
+
+jobs:
+    update-tag:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Create new tag
+              id: tag_version
+              run: |
+                  git tag -a v$(cat VERSION)
+                  git push origin v$(cat VERSION)
