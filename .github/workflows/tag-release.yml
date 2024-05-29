@@ -31,4 +31,4 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
 
     go-release:
-        uses: ./.github/workflows/go-releaser.yml
+        uses: ./.github/workflows/goreleaser.yml
