@@ -29,3 +29,6 @@ jobs:
                   git push origin $NEW_TAG
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+
+    go-release:
+        uses: ./.github/workflows/go-releaser.yml
