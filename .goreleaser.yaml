@@ -53,10 +53,6 @@ brews:
       directory: Formula
       license: "MIT"
 
-      commit_author:
-          name: goreleaserbot
-          email: bot@goreleaser.com # not sure if this will work yet
-
       repository:
           token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 
