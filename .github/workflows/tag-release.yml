@@ -12,7 +12,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+      
+            - name: Configure Git
+              run: |
+                AUTHOR_NAME=$(git log -1 --pretty=format:'%an')
+                AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')
 
+                git config --global user.email "$(AUTHOR_EMAIL)"
+                git config --global user.name "$(AUTHOR_NAME)"
             - name: Create new tag
               id: tag_version
               run: |
