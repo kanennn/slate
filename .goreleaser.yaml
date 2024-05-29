@@ -45,4 +45,21 @@ changelog:
             - "^test:"
 
 release:
-    prerelease: true
+    prerelease: auto
+
+brews:
+    - name: slate
+      homepage: "https://github.com/kanennn/slate"
+      directory: Formula
+      license: "MIT"
+
+      commit_author:
+          name: goreleaserbot
+          email: bot@goreleaser.com # not sure if this will work yet
+
+      repository:
+          owner: kanennn
+          name: homebrew-slate-tap 
+
+
+
