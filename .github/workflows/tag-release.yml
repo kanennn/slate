@@ -18,3 +18,5 @@ jobs:
               run: |
                   git tag -a v$(cat VERSION)
                   git push origin v$(cat VERSION)
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
