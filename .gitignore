@@ -25,3 +25,5 @@ test
 bin/
 
 .DS_store
+
+dist/
