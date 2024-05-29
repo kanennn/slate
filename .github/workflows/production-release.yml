@@ -1,0 +1,76 @@
+# name: Production release
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+
+#       - name: Go setup
+#         uses: actions/setup-go@v3
+#         with:
+#           go-version: '1.22'
+
+#       - name: Install dependencies
+#         run: go mod tidy
+
+#       # - name: For running tests whenever I have them
+#       #   run: go test ./...
+
+#       - name: GoReleaser Action
+#         uses: goreleaser/goreleaser-action@v5.1.0
+            
+
+#       - name: Go release
+#         run: go install github.com/goreleaser/goreleaser@latest
+
+
+
+#       - name: Build 
+#         run: make build 
+
+#       - name: Generate version tag
+#         id: tag_version
+#         run: |
+#           VERSION=$(cat VERSION)
+#           echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+      
+      
+
+
+#       - name: Create GitHub Release
+#         id: create_release
+#         uses: actions/create-release@v1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           tag_name: ${{ env.RELEASE_VERSION }}
+#           release_name: "Release ${{ env.RELEASE_VERSION }}"
+#           body: |
+#             ## Changes
+#             - Refer to CHANGELOG.md for detailed changes
+#           draft: false
+#           prerelease: false
+
+#       - name: Upload Release Asset
+#         uses: actions/upload-release-asset@v1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           upload_url: ${{ steps.create_release.outputs.upload_url }}
+#           asset_path: ./my-go-app
+#           asset_name: my-go-app
+#           asset_content_type: application/octet-stream
+
+#       - name: Update Homebrew Tap
+#         run: |
+#           # Your script to update Homebrew formula
+#           ./scripts/update_homebrew.sh
+
