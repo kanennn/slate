@@ -55,7 +55,7 @@ brews:
 
       repository:
           # token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-
+        # bumping repo to run action
           owner: kanennn
           name: homebrew-slate-tap 
       commit_author:
