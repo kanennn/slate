@@ -5,6 +5,9 @@ on:
         tags:
             - "*"
     workflow_call:
+        secrets:
+              PAT:
+                required: true
 
 
 permissions:
