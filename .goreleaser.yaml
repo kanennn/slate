@@ -58,6 +58,8 @@ brews:
 
           owner: kanennn
           name: homebrew-slate-tap 
-
+      commit_author:
+          name: "{{ .Env.USERNAME }}"
+          email: "{{ .Env.EMAIL }}"
 
 
