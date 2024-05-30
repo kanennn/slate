@@ -33,5 +33,4 @@ jobs:
     go-release:
         needs: update-tag
         uses: ./.github/workflows/goreleaser.yml
-        with:
-            PAT: ${{ secrets.PAT }}
+        secrets: inherit
