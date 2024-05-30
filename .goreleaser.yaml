@@ -54,7 +54,7 @@ brews:
       license: "MIT"
 
       repository:
-          token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+          # token: "{{ .Env.TAP_GITHUB_TOKEN }}"
 
           owner: kanennn
           name: homebrew-slate-tap 
