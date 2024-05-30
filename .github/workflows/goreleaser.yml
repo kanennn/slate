@@ -1,4 +1,4 @@
-name: Go Releaser
+ name: Go Releaser
 
 on:
     push:
@@ -31,8 +31,8 @@ jobs:
                   version: "~> v1"
                   args: release --clean
         env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.PAT }}
           EMAIL: ${{ secrets.EMAIL }}
           USERNAME: ${{ secrets.USERNAME }}
         
